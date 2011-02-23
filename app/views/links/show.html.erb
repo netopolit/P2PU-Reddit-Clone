@@ -1,16 +1,16 @@
 <p>
-  <b>User:</b>
-  <%= @link.user_id %>
-</p>
-
-<p>
   <b>Title:</b>
   <%= @link.title %>
 </p>
 
 <p>
-  <b>Url:</b>
-  <%= @link.url %>
+  <b>Username:</b>
+  <%= @link.user.username %>
+</p>
+
+<p>
+  <b>URL:</b>
+  <%=link_to @link.url, @link.url %>
 </p>
 
 <p>

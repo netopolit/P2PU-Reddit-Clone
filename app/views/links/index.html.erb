@@ -3,9 +3,9 @@
 
 <% @links.each do |link| %>
 
-  <p>User id: <%= link.user_id %></p>
   <p>Title: <%= link.title %></p>
-  <p>URL: <%= link.url %></p>
+  <p>Username: <%= link.user.username %></p>
+  <p>URL: <%=link_to link.url, link.url %></p>
   <p>Description: <%= link.description %></p>
   <p><%= link_to 'Show', link %></p>
   <p><%= link_to 'Edit', edit_link_path(link) %></p>
