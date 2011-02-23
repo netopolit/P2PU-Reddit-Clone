@@ -1,7 +1,7 @@
 class LinksController < ApplicationController
   
   before_filter :authenticate_user!, :except => [:index, :show]
-  before_filter :post_owner, :only => [:edit, :update, :destroy]
+  before_filter :link_owner, :only => [:edit, :update, :destroy]
 
   # GET /links
   # GET /links.xml

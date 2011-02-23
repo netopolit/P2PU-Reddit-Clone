@@ -14,6 +14,13 @@
 
 class Link < ActiveRecord::Base
   belongs_to :user
+  
+  validates :user_id, :presence => true
+  validates :title, :presence => true
+  validates :url, :presence => true
+  validates_url_format_of :url,
+                          :allow_nil => true,
+                          :message => "doesn't seem to be valid"
 
   attr_accessible :title, :url, :description
 end
