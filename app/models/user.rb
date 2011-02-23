@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20110223163334
+# Schema version: 20110223172857
 #
 # Table name: users
 #
@@ -17,15 +17,18 @@
 #  last_sign_in_ip      :string(255)
 #  created_at           :datetime
 #  updated_at           :datetime
+#  name                 :string(255)
 #
 
 class User < ActiveRecord::Base
   has_many :links, :dependent => :destroy
+  validates :username, :presence => true,
+                   :length => {:minimum => 2, :maximum => 14}
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable, :lockable and :timeoutable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me
+  attr_accessible :username, :email, :password, :password_confirmation, :remember_me
 end
