@@ -17,6 +17,8 @@ class Vote < ActiveRecord::Base
 
   validates :user_id, :presence => true
   validates :link_id, :presence => true
+  validates_inclusion_of :points, :in => [-1, 0, 1],
+    :message => "%{value} is not a valid score"
   #Should ensure max one vote by specific user per article?
   validates_uniqueness_of :link_id, :scope => :user_id
   
