@@ -1,0 +1,27 @@
+# == Schema Information
+# Schema version: 20110223162600
+#
+# Table name: links
+#
+#  id          :integer         not null, primary key
+#  user_id     :integer
+#  title       :string(255)
+#  url         :string(255)
+#  description :text
+#  created_at  :datetime
+#  updated_at  :datetime
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  user_id: 1
+  title: MyString
+  url: MyString
+  description: MyText
+
+two:
+  user_id: 1
+  title: MyString
+  url: MyString
+  description: MyText
