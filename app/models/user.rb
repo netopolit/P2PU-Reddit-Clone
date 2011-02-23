@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20110223172857
+# Schema version: 20110223193738
 #
 # Table name: users
 #
@@ -17,11 +17,13 @@
 #  last_sign_in_ip      :string(255)
 #  created_at           :datetime
 #  updated_at           :datetime
-#  name                 :string(255)
+#  username             :string(255)
 #
 
 class User < ActiveRecord::Base
   has_many :links, :dependent => :destroy
+  has_many :votes, :dependent => :destroy
+
   validates :username, :presence => true,
             :length => {:minimum => 2, :maximum => 14},
             :uniqueness => true

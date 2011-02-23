@@ -1,0 +1,22 @@
+# == Schema Information
+# Schema version: 20110223193738
+#
+# Table name: votes
+#
+#  id         :integer         not null, primary key
+#  user_id    :integer
+#  link_id    :integer
+#  points     :integer
+#  created_at :datetime
+#  updated_at :datetime
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  user_id: 1
+  link_id: 1
+
+two:
+  user_id: 1
+  link_id: 1
