@@ -3,18 +3,22 @@
 
 <% @links.each do |link| %>
 
-  <p>Title: <%= link.title %></p>
-  <p>Username: <%= link.user.username %></p>
-  <p>URL: <%=link_to link.url, link.url %></p>
+  
+
+  <h2> <%=link_to link.title, link.url %></h2>
+  <p>submitted by: <%= link.user.username %></p>
   <p>Description: <%= link.description %></p>
-  <p><%= link_to 'Show', link %></p>
-  <p><%= link_to 'Edit', edit_link_path(link) %></p>
-  <p><%= link_to 'Destroy', link, :confirm => 'Are you sure?', :method => :delete %></p>
+  <%= link_to 'Show', link %>
+  <% if owner?(link.user) %>
+  | <%= link_to 'Edit', edit_link_path(link) %> |
+  <%= link_to 'Destroy', link, :confirm => 'Are you sure?', :method => :delete %>
+  <% end %>
   <hr />
 
 <% end %>
 
 
+<% if user_signed_in? %>
 <br />
-
 <%= link_to content_tag(:span, 'New Link'), new_link_path, :class => "btn" %>
+<% end %>

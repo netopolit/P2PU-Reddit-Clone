@@ -10,7 +10,7 @@
 
 <p>
   <b>URL:</b>
-  <%=link_to @link.url, @link.url %>
+  <%=link_to @link.title, @link.url %>
 </p>
 
 <p>
@@ -18,6 +18,7 @@
   <%= @link.description %>
 </p>
 
-
+<% if owner?(@link.user) %>
 <%= link_to 'Edit', edit_link_path(@link) %> |
+<% end %>
 <%= link_to 'Back', links_path %>
