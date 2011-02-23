@@ -7,7 +7,7 @@
 
   <h2> <%=link_to link.title, link.url %></h2>
   <p>submitted by: <%= link.user.username %></p>
-  <p>Description: <%= link.description %></p>
+  <p><strong>Description:</strong> <%= link.description %></p>
   <%= link_to 'Show', link %>
   <% if owner?(link.user) %>
   | <%= link_to 'Edit', edit_link_path(link) %> |

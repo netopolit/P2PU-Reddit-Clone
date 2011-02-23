@@ -1,17 +1,6 @@
-<p>
-  <b>Title:</b>
-  <%= @link.title %>
-</p>
+<h2><%=link_to @link.title, @link.url %></h2>
 
-<p>
-  <b>Username:</b>
-  <%= @link.user.username %>
-</p>
-
-<p>
-  <b>URL:</b>
-  <%=link_to @link.title, @link.url %>
-</p>
+<p> submitted by: <%= @link.user.username %> </p>
 
 <p>
   <b>Description:</b>
