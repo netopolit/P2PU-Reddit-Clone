@@ -1,4 +1,8 @@
 class LinksController < ApplicationController
+  
+  before_filter :authenticate_user!, :except => [:index, :show]
+  before_filter :post_owner, :only => [:edit, :update, :destroy]
+
   # GET /links
   # GET /links.xml
   def index
@@ -80,4 +84,13 @@ class LinksController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+  
+  private
+  def link_owner
+    @Link = Link.find(params[:id])
+    redirect_to root_path unless @Link.user == current_user
+  end
+
 end
+

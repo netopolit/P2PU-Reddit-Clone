@@ -1,29 +1,20 @@
 <h1>Listing links</h1>
 
-<table>
-  <tr>
-    <th>User</th>
-    <th>Title</th>
-    <th>Url</th>
-    <th>Description</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
 
 <% @links.each do |link| %>
-  <tr>
-    <td><%= link.user_id %></td>
-    <td><%= link.title %></td>
-    <td><%= link.url %></td>
-    <td><%= link.description %></td>
-    <td><%= link_to 'Show', link %></td>
-    <td><%= link_to 'Edit', edit_link_path(link) %></td>
-    <td><%= link_to 'Destroy', link, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+
+  <p>User id: <%= link.user_id %></p>
+  <p>Title: <%= link.title %></p>
+  <p>URL: <%= link.url %></p>
+  <p>Description: <%= link.description %></p>
+  <p><%= link_to 'Show', link %></p>
+  <p><%= link_to 'Edit', edit_link_path(link) %></p>
+  <p><%= link_to 'Destroy', link, :confirm => 'Are you sure?', :method => :delete %></p>
+  <hr />
+
 <% end %>
-</table>
+
 
 <br />
 
-<%= link_to 'New Link', new_link_path %>
+<%= link_to content_tag(:span, 'New Link'), new_link_path, :class => "btn" %>
