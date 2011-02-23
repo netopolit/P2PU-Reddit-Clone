@@ -7,6 +7,14 @@
   <%= @link.description %>
 </p>
 
+
+<%= form_for @link.votes.build(:link_id => @link.id) do |f| %>
+  <div><%= f.hidden_field :link_id %></div>
+  <div class="actions"><%= f.submit "Voteup" %></div>
+
+<% end %>
+
+
 <% if owner?(@link.user) %>
 <%= link_to 'Edit', edit_link_path(@link) %> |
 <% end %>

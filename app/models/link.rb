@@ -23,5 +23,7 @@ class Link < ActiveRecord::Base
                           :allow_nil => true,
                           :message => "doesn't seem to be valid"
 
-  attr_accessible :title, :url, :description
+  attr_accessible :title, :url, :description, :link_id
+
+
 end

@@ -2,6 +2,7 @@ Reddit::Application.routes.draw do
   devise_for :users
 
   resources :links
+  resources :votes
 
   root :to => "links#index"
 
