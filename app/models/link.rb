@@ -24,6 +24,8 @@ class Link < ActiveRecord::Base
                           :allow_nil => true,
                           :message => "doesn't seem to be valid"
 
+  default_scope order('score DESC, created_at DESC')
+
   attr_accessible :title, :url, :description, :score
 
 
