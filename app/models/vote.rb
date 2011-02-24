@@ -23,3 +23,7 @@ class Vote < ActiveRecord::Base
   validates_uniqueness_of :link_id, :scope => :user_id
   
 end
+
+def follow!(followed)
+    relationships.create!(:followed_id => followed.id)
+end

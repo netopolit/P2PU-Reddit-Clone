@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20110223162600
+# Schema version: 20110224132258
 #
 # Table name: links
 #
@@ -10,6 +10,7 @@
 #  description :text
 #  created_at  :datetime
 #  updated_at  :datetime
+#  score       :integer         default(0)
 #
 
 class Link < ActiveRecord::Base
