@@ -1,8 +1,6 @@
 <h1>Listing links</h1>
 
-
 <% @links.each do |link| %>
-
   <%= div_for link do %>
     <h2><%=link_to link.title, link.url %></h2>
 
@@ -10,8 +8,10 @@
     <p><strong>Description:</strong> <%= link.description %></p>
 
     <div class="votes">
-      <% if current_user && !voted?(link) %>
+    <% if !current_user || (current_user && !voted?(link)) %>
       <%= render :partial => 'vote_buttons', :locals => { :link => link } %>
+    <% else %>
+      <%= render :partial => 'voted_buttons', :locals => { :link => link } %>
     <% end %>
     </div>
     
@@ -22,11 +22,7 @@
     <% end %>
     <hr />
   <% end %>
-
-
-
 <% end %>
-
 
 <% if user_signed_in? %>
   <br />

@@ -134,7 +134,6 @@ p{clear:both; margin:1.2em 0; font-size: 13px;}
   position: absolute;
   left: -90px;
   top: 5px;
-  text-align: center;
   word-wrap: break-word;
 
 }
@@ -238,15 +237,14 @@ p{clear:both; margin:1.2em 0; font-size: 13px;}
   font-style: italic;
 }
 
-
 h2.score {
   margin:0;
   padding:2px 0;
   color: #a81929;
 }
 
-
-.arrow input {
+.arrow, .arrow input {
+  display: block;
   width: 15px;
   height:14px;
   margin: 0;
@@ -254,30 +252,22 @@ h2.score {
   border: 0;
   text-indent: -1000em;
   cursor: pointer;
-}
-.arrow.upvote input {
   background: transparent url(../images/sprite.png) no-repeat center center;
+}
+.arrow.upvote, .arrow.upvote input {
+  cursor: pointer;
   background-position:-4px -271px;
 }
-.arrow.downvote input {
-  background: transparent url(../images/sprite.png) no-repeat center center;
+.arrow.upvoted {
+  cursor: default;
+  background-position:-4px -227px;
+}
+.arrow.downvote, .arrow.downvote input {
+  cursor: pointer;
   background-position:-4px -293px;
 }
-
-.arrow.upmod {
- background-image:url(/static/sprite.png?v=0ec7f79c9f54824fdef1fe36aef6ad27);
- background-position:-4px -227px;
-}
-.arrow.downmod {
- background-image:url(/static/sprite.png?v=0ec7f79c9f54824fdef1fe36aef6ad27);
- background-position:-4px -249px;
-}
-.arrow.up {
- background-image:url(/static/sprite.png?v=0ec7f79c9f54824fdef1fe36aef6ad27);
- background-position:-4px -271px;
-}
-.arrow.down {
- background-image:url(/static/sprite.png?v=0ec7f79c9f54824fdef1fe36aef6ad27);
- background-position:-4px -293px;
+.arrow.downvoted {
+  cursor: default;
+  background-position:-4px -249px;
 }
 
