@@ -21,9 +21,6 @@ class Vote < ActiveRecord::Base
     :message => "%{value} is not a valid score"
   #Should ensure max one vote by specific user per article?
   validates_uniqueness_of :link_id, :scope => :user_id
-  
-end
 
-def follow!(followed)
-    relationships.create!(:followed_id => followed.id)
+
 end

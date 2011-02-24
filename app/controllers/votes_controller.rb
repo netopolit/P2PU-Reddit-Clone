@@ -4,7 +4,12 @@ class VotesController < ApplicationController
   def create
     @link = Link.find(params[:vote][:link_id])
     @points = params[:vote][:points]
-    current_user.votes.create(:link_id => @link.id, :points => @points)
+
+    if current_user.votes.where(:link_id => @link.id).empty?
+      current_user.votes.create(:link_id => @link.id, :points => @points)
+      change_link_score(@link)
+    end
+
     respond_to do |format|
       format.html { redirect_to @link }
       format.js
@@ -19,5 +24,10 @@ class VotesController < ApplicationController
       format.js
     end
   end
-  
+
+  def change_link_score(link)
+    score = link.score + 1
+    link.update_attributes(:score => score)
+  end
+
 end
