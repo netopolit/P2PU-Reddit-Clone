@@ -243,6 +243,9 @@ h2.score {
   color: #a81929;
 }
 
+.arrow input {
+  cursor: pointer;
+}
 .arrow, .arrow input {
   display: block;
   width: 15px;
@@ -251,23 +254,18 @@ h2.score {
   padding: 0;
   border: 0;
   text-indent: -1000em;
-  cursor: pointer;
   background: transparent url(../images/sprite.png) no-repeat center center;
 }
 .arrow.upvote, .arrow.upvote input {
-  cursor: pointer;
   background-position:-4px -271px;
 }
 .arrow.upvoted {
-  cursor: default;
   background-position:-4px -227px;
 }
 .arrow.downvote, .arrow.downvote input {
-  cursor: pointer;
   background-position:-4px -293px;
 }
 .arrow.downvoted {
-  cursor: default;
   background-position:-4px -249px;
 }
 
