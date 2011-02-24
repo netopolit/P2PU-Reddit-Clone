@@ -238,7 +238,8 @@ p{clear:both; margin:1.2em 0; font-size: 13px;}
 }
 
 h2.score {
-  margin:0;
+  margin: 0;
+  text-align: center;
   padding:2px 0;
   color: #a81929;
 }
@@ -248,13 +249,14 @@ h2.score {
 }
 .arrow, .arrow input {
   display: block;
+  width:100%;
   width: 15px;
   height:14px;
-  margin: 0;
-  padding: 0;
   border: 0;
   text-indent: -1000em;
   background: transparent url(../images/sprite.png) no-repeat center center;
+  margin: 0 auto;
+  padding: 0;
 }
 .arrow.upvote, .arrow.upvote input {
   background-position:-4px -271px;

@@ -6,7 +6,7 @@
 
 <h2 class="score"> <%= link.score %> </h2>
 
-<%= form_for link.votes.build(:link_id => link.id, :points => -1) do |f| %>
+<%= form_for( link.votes.build(:link_id => link.id, :points => -1), :remote => true ) do |f| %>
   <div><%= f.hidden_field :link_id %></div>
   <div><%= f.hidden_field :points %></div>
   <div class="arrow downvote"><%= f.submit "Downvote" %></div>

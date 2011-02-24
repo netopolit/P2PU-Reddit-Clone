@@ -5,9 +5,20 @@ class VotesController < ApplicationController
     @link = Link.find(params[:vote][:link_id])
 
     unless voted?(@link)
-      @points = params[:vote][:points]
+      @points = params[:vote][:points].to_i
       current_user.votes.create(:link_id => @link.id, :points => @points)
       change_link_score(@link, @points)
+      if @points == 1
+        @selector1 = 'first'
+        @element1 = '<div class="arrow upvoted"></div>'
+        @selector2 = 'last'
+        @element2 = '<div class="arrow downvote"></div>'
+      else
+        @selector1 = 'last'
+        @element1 = '<div class="arrow downvoted"></div>'
+        @selector2 = 'first'
+        @element2 = '<div class="arrow upvote"></div>'
+      end
     end
 
     respond_to do |format|
@@ -27,7 +38,7 @@ class VotesController < ApplicationController
 
   
   def change_link_score(link, points)
-    score = link.score + 1
+    score = link.score + points
     link.update_attributes(:score => score)
   end
 
