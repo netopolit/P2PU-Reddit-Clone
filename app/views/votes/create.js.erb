@@ -1,2 +1,2 @@
-$("#<%= dom_id(@link) %> .new_vote").remove()
 $("#<%= dom_id(@link) %> .score").html("<%= @link.score %>");
+$("#<%= dom_id(@link) %> form").first().replaceWith('<div class="arrow upvoted"></div>');

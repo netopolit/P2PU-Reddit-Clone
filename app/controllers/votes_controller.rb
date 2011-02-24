@@ -7,7 +7,7 @@ class VotesController < ApplicationController
     unless voted?(@link)
       @points = params[:vote][:points]
       current_user.votes.create(:link_id => @link.id, :points => @points)
-      change_link_score(@link)
+      change_link_score(@link, @points)
     end
 
     respond_to do |format|
@@ -26,7 +26,7 @@ class VotesController < ApplicationController
   end
 
   
-  def change_link_score(link)
+  def change_link_score(link, points)
     score = link.score + 1
     link.update_attributes(:score => score)
   end
