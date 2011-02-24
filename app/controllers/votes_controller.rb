@@ -3,9 +3,9 @@ class VotesController < ApplicationController
 
   def create
     @link = Link.find(params[:vote][:link_id])
-    @points = params[:vote][:points]
 
     if current_user.votes.where(:link_id => @link.id).empty?
+      @points = params[:vote][:points]
       current_user.votes.create(:link_id => @link.id, :points => @points)
       change_link_score(@link)
     end
