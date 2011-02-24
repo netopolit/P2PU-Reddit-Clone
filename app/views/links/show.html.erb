@@ -7,11 +7,6 @@
   <%= @link.description %>
 </p>
 
-
-<%= render :partial => 'vote_buttons',
-           :locals => { :link => @link } %>
-
-
 <% if owner?(@link.user) %>
 <%= link_to 'Edit', edit_link_path(@link) %> |
 <% end %>
