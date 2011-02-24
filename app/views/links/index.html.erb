@@ -4,17 +4,19 @@
 <% @links.each do |link| %>
 
   <%= div_for link do %>
-    <h2>
-      <span class="score"> <%= link.score %> </span>
-      <%=link_to link.title, link.url %>
-    </h2>
+    <h2><%=link_to link.title, link.url %></h2>
 
     <p>submitted by: <%= link.user.username %></p>
     <p><strong>Description:</strong> <%= link.description %></p>
 
-    <% if current_user && !voted?(link) %>
+    <div class="votes">
+      <h2 class="score"> <%= link.score %> </h2>
+      <% if current_user && !voted?(link) %>
       <%= render :partial => 'vote_buttons', :locals => { :link => link } %>
     <% end %>
+    </div>
+
+
     
     <%= link_to 'Show', link %>
     <% if owner?(link.user) %>

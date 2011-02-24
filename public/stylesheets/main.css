@@ -124,13 +124,12 @@ p{clear:both; margin:1.2em 0; font-size: 13px;}
 .link{
   position: relative;
 }
-.poster {
-  font-style: italic;
-  font-size:12px;
+.votes {
+
 
 }
 
-.link .poster {
+.link .votes {
   width: 80px;
   position: absolute;
   left: -90px;
@@ -139,7 +138,7 @@ p{clear:both; margin:1.2em 0; font-size: 13px;}
   word-wrap: break-word;
 
 }
-.post .poster img{
+.link .votes img{
   margin: 0 auto;
 
 }
