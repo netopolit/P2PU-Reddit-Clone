@@ -121,7 +121,7 @@ p{clear:both; margin:1.2em 0; font-size: 13px;}
   text-decoration: underline;
 }
 
-.post{
+.link{
   position: relative;
 }
 .poster {
@@ -130,7 +130,7 @@ p{clear:both; margin:1.2em 0; font-size: 13px;}
 
 }
 
-.post .poster {
+.link .poster {
   width: 80px;
   position: absolute;
   left: -90px;
@@ -238,4 +238,9 @@ p{clear:both; margin:1.2em 0; font-size: 13px;}
 .alert {
   color: red;
   font-style: italic;
+}
+
+
+.score {
+  color: #a81929;
 }
