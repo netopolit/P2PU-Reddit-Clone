@@ -3,19 +3,21 @@
 
 <% @links.each do |link| %>
 
-  
+  <%= div_for link do %>
+    <h2> <%=link_to link.title, link.url %></h2>
+    <p>submitted by: <%= link.user.username %></p>
+    <p><strong>Description:</strong> <%= link.description %></p>
 
-  <h2> <%=link_to link.title, link.url %></h2>
-  <p>submitted by: <%= link.user.username %></p>
-  <p><strong>Description:</strong> <%= link.description %></p>
-  
+    <%= render :partial => 'vote_buttons',
+             :locals => { :link => link } %>
 
-  <%= link_to 'Show', link %>
-  <% if owner?(link.user) %>
-  | <%= link_to 'Edit', edit_link_path(link) %> |
-  <%= link_to 'Destroy', link, :confirm => 'Are you sure?', :method => :delete %>
+    <%= link_to 'Show', link %>
+    <% if owner?(link.user) %>
+    | <%= link_to 'Edit', edit_link_path(link) %> |
+    <%= link_to 'Destroy', link, :confirm => 'Are you sure?', :method => :delete %>
+    <% end %>
+    <hr />
   <% end %>
-  <hr />
 
 <% end %>
 
