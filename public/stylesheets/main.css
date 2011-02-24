@@ -155,7 +155,6 @@ p{clear:both; margin:1.2em 0; font-size: 13px;}
   height: 60px;
   padding: 20px 0 0 15px;
   background: url("../images/bubble-bottom.png") no-repeat 12px 0;
-
 }
 .comment {
   -webkit-border-radius: 10px;
@@ -240,6 +239,45 @@ p{clear:both; margin:1.2em 0; font-size: 13px;}
 }
 
 
-.score {
+h2.score {
+  margin:0;
+  padding:2px 0;
   color: #a81929;
 }
+
+
+.arrow input {
+  width: 15px;
+  height:14px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  text-indent: -1000em;
+  cursor: pointer;
+}
+.arrow.upvote input {
+  background: transparent url(../images/sprite.png) no-repeat center center;
+  background-position:-4px -271px;
+}
+.arrow.downvote input {
+  background: transparent url(../images/sprite.png) no-repeat center center;
+  background-position:-4px -293px;
+}
+
+.arrow.upmod {
+ background-image:url(/static/sprite.png?v=0ec7f79c9f54824fdef1fe36aef6ad27);
+ background-position:-4px -227px;
+}
+.arrow.downmod {
+ background-image:url(/static/sprite.png?v=0ec7f79c9f54824fdef1fe36aef6ad27);
+ background-position:-4px -249px;
+}
+.arrow.up {
+ background-image:url(/static/sprite.png?v=0ec7f79c9f54824fdef1fe36aef6ad27);
+ background-position:-4px -271px;
+}
+.arrow.down {
+ background-image:url(/static/sprite.png?v=0ec7f79c9f54824fdef1fe36aef6ad27);
+ background-position:-4px -293px;
+}
+

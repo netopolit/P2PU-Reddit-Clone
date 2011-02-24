@@ -10,13 +10,10 @@
     <p><strong>Description:</strong> <%= link.description %></p>
 
     <div class="votes">
-      <h2 class="score"> <%= link.score %> </h2>
       <% if current_user && !voted?(link) %>
       <%= render :partial => 'vote_buttons', :locals => { :link => link } %>
     <% end %>
     </div>
-
-
     
     <%= link_to 'Show', link %>
     <% if owner?(link.user) %>
@@ -25,6 +22,8 @@
     <% end %>
     <hr />
   <% end %>
+
+
 
 <% end %>
 
