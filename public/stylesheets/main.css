@@ -142,7 +142,7 @@ a#logo, a#logo:visited, a#logo:hover {
 a#logo:hover {
   color: #a81929;
 }
-#user_nav{
+#user_nav {
   display: block;
   position: absolute;
   right: 0px;
@@ -153,12 +153,23 @@ a#logo:hover {
   clear: both;
 }
 
-.link{
+.link {
   position: relative;
 }
+h2.link_title {
+  margin: 0;
+}
+
+p.submitted_by {
+  margin: 0;
+  color: #666;
+  font-size: 11px;
+}
+p.link_description {
+  margin: 10px 0 0 0;
+}
+
 .votes {
-
-
 }
 
 .link .votes {
