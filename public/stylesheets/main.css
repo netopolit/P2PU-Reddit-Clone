@@ -1,4 +1,3 @@
-
 html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
   margin:0; padding:0; border:0; outline:0; font-size:100%; vertical-align:baseline; background:transparent; }
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display:block; }
@@ -76,8 +75,10 @@ a:hover { color: #036; text-decoration: underline;}
 
 h1, h2, h3, h4, h5, h6 {font-weight: bold; color: #a81929;}
 h1,h1 a:link,h1 a:visited{font-size:32px; margin:.75em 0 .25em 0;}
-h2,h2 a:link,h2 a:visited{font-size:21px;margin:.75em 0 .25em 0; color: #4ea68e;}
-h2 a:hover,h2 a:focus,h2 a:active{}
+h2 {font-size:19px;margin:.75em 0 .25em 0; color: #4ea68e;}
+h2 a:link {color: #3194c6;}
+h2 a:visited {color: #194b64;}
+h2 a:hover,h2 a:focus,h2 a:active{background: none;}
 h3,h3 a:link,h3 a:visited{font-size:18px;margin:.75em 0 .25em 0;}
 h3 a:hover,h3 a:focus,h3 a:active{}
 h4,h4 a:link,h4 a:visited{font-size:16px;margin:.75em 0 .25em 0;}
@@ -241,7 +242,7 @@ h2.score {
   margin: 0;
   text-align: center;
   padding:2px 0;
-  color: #a81929;
+  color: #c6c6c6;
 }
 
 .arrow input {
@@ -259,15 +260,15 @@ h2.score {
   padding: 0;
 }
 .arrow.upvote, .arrow.upvote input {
-  background-position:-4px -271px;
+  background-position:-4px -47px;
 }
 .arrow.upvoted {
-  background-position:-4px -227px;
+  background-position:-4px -4px;
 }
 .arrow.downvote, .arrow.downvote input {
-  background-position:-4px -293px;
+  background-position:-4px -70px;
 }
 .arrow.downvoted {
-  background-position:-4px -249px;
+  background-position:-4px -26px;
 }
 
