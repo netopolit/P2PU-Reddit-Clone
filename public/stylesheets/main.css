@@ -93,11 +93,14 @@ h6,h6 a:link,h6 a:visited{font-size:12px;margin:.75em 0 .25em 0;}
 }
 p{clear:both; margin:1.2em 0; font-size: 13px;}
 
-#user_nav{
+#navbar{
 
   display: block;
   width: 640px;
+  height: 32px;
   padding: 7px 20px;
+  margin-bottom: 40px;
+  position: relative;
 
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
@@ -107,7 +110,7 @@ p{clear:both; margin:1.2em 0; font-size: 13px;}
   box-shadow: 2px 2px 5px #888;
   background-image: -moz-linear-gradient(top, #F6F8F7, #E2E6E4);
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #F6F8F7), color-stop(1.0, #E2E6E4));
-  background-color: #DDDDDD;
+  background-color: #DDD;
   padding: 10px;
   font-family: Georgia, serif;
   font-size: 11pt;
@@ -116,10 +119,38 @@ p{clear:both; margin:1.2em 0; font-size: 13px;}
   text-shadow: #fff 1px 1px 0;
 
 }
-
-#user_nav a{
-
+#navbar a, #navbar a:visited{
   text-decoration: underline;
+  color: #666;
+}
+#navbar a:hover{
+  text-decoration: none;
+  background: none;
+  color: #666;
+}
+
+a#logo, a#logo:visited, a#logo:hover {
+  display: block;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  margin: 0;
+  padding: 9px 12px;
+  line-height: 32px;
+  text-decoration: none;
+}
+a#logo:hover {
+  color: #a81929;
+}
+#user_nav{
+  display: block;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  margin: 0;
+  padding: 9px 12px;
+  line-height: 32px;
+  clear: both;
 }
 
 .link{
@@ -262,13 +293,13 @@ h2.score {
 .arrow.upvote, .arrow.upvote input {
   background-position:-4px -47px;
 }
-.arrow.upvoted {
+.arrow.upvoted, .arrow.upvote input:hover {
   background-position:-4px -4px;
 }
 .arrow.downvote, .arrow.downvote input {
   background-position:-4px -70px;
 }
-.arrow.downvoted {
+.arrow.downvoted, .arrow.downvote input:hover {
   background-position:-4px -26px;
 }
 
