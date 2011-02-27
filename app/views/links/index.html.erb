@@ -5,19 +5,22 @@
     <p class="submitted_by">submitted by: <%= link.user.username %></p>
     <p class="link_description"><%= link.description %></p>
 
-    <div class="votes">
-    <% if !current_user || (current_user && !voted?(link)) %>
-      <%= render :partial => 'vote_buttons', :locals => { :link => link } %>
-    <% else %>
-      <%= render :partial => 'voted_buttons', :locals => { :link => link } %>
-    <% end %>
+    <div class="votebar">
+      <div class="link-preview"> <script type="text/javascript">wsr_snapshot('<%= link.url %>', '4fR76fcd0dg8', 't');</script> </div>
+        <div class="votes">
+        <% if !current_user || (current_user && !voted?(link)) %>
+          <%= render :partial => 'vote_buttons', :locals => { :link => link } %>
+        <% else %>
+          <%= render :partial => 'voted_buttons', :locals => { :link => link } %>
+        <% end %>
+        </div>
     </div>
 
     <% if link.description.empty? %>
       <br />
     <% end %>  
 
-    <hr />
+    <br />
   <% end %>
 <% end %>
 

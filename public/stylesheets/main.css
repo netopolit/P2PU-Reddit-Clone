@@ -152,6 +152,7 @@ a#logo:hover {
 
 .link {
   position: relative;
+  border-top: 1px solid #ccc;
 }
 h2.link_title {
   margin: 0;
@@ -166,14 +167,27 @@ p.link_description {
   margin: 10px 0 0 0;
 }
 
-.link .votes {
-  width: 80px;
+.votebar {
+  width: 118px;
   position: absolute;
-  left: -90px;
-  top: 5px;
+  left: -130px;
+  top: 0;
   word-wrap: break-word;
   font-family: Georgia, Palatino, Palatino Linotype, Times, Times New Roman, serif;
 }
+.link-preview {
+  display: block;
+  width: 90px;
+  height: 70px;
+  float: right;
+}
+
+.votes{
+  display: block;
+  float: left;
+  margin-top: 10px;
+}
+
 
 
 .btn {
