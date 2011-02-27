@@ -181,6 +181,15 @@ p.link_description {
   height: 70px;
   float: right;
 }
+.link-preview img {
+  background: none;
+  -webkit-box-shadow: 0 0 1px #999 ;
+  -moz-box-shadow: 0 0 1px #999;
+  box-shadow: 0 0 2px #999;
+}
+.link-preview a:hover {
+  background: none;
+}
 
 .votes{
   display: block;
@@ -275,3 +284,5 @@ h2.score {
 .arrow.downvoted, .arrow.downvote input:hover {
   background-position:-4px -26px;
 }
+
+
