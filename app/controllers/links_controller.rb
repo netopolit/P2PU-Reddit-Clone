@@ -1,7 +1,7 @@
 class LinksController < ApplicationController
   
   before_filter :authenticate_user!, :except => [:index, :show]
-#  before_filter :link_owner, :only => [:edit, :update, :destroy]
+  before_filter :link_owner, :only => [:edit, :update, :destroy]
 
   # GET /links
   # GET /links.xml
@@ -37,9 +37,9 @@ class LinksController < ApplicationController
   end
 
   # GET /links/1/edit
-#  def edit
-#    @link = Link.find(params[:id])
-#  end
+  def edit
+    @link = Link.find(params[:id])
+  end
 
   # POST /links
   # POST /links.xml
@@ -59,31 +59,31 @@ class LinksController < ApplicationController
 
   # PUT /links/1
   # PUT /links/1.xml
-#  def update
-#    @link = Link.find(params[:id])
-#
-#    respond_to do |format|
-#      if @link.update_attributes(params[:link])
-#        format.html { redirect_to(@link, :notice => 'Link was successfully updated.') }
-#        format.xml  { head :ok }
-#      else
-#        format.html { render :action => "edit" }
-#        format.xml  { render :xml => @link.errors, :status => :unprocessable_entity }
-#      end
-#    end
-#  end
+  def update
+    @link = Link.find(params[:id])
+
+    respond_to do |format|
+      if @link.update_attributes(params[:link])
+        format.html { redirect_to(@link, :notice => 'Link was successfully updated.') }
+        format.xml  { head :ok }
+      else
+        format.html { render :action => "edit" }
+        format.xml  { render :xml => @link.errors, :status => :unprocessable_entity }
+      end
+    end
+  end
 
   # DELETE /links/1
   # DELETE /links/1.xml
-#  def destroy
-#    @link = Link.find(params[:id])
-#    @link.destroy
-#
-#    respond_to do |format|
-#      format.html { redirect_to(links_url) }
-#      format.xml  { head :ok }
-#    end
-#  end
+  def destroy
+    @link = Link.find(params[:id])
+    @link.destroy
+
+    respond_to do |format|
+      format.html { redirect_to(links_url) }
+      format.xml  { head :ok }
+    end
+  end
 
   
   private
