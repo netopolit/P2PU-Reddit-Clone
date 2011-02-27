@@ -2,6 +2,7 @@ class LinksController < ApplicationController
   
   before_filter :authenticate_user!, :except => [:index, :show]
   before_filter :link_owner, :only => [:edit, :update, :destroy]
+  before_filter :prepend_url_protocol, :only => [:create, :update]
 
   # GET /links
   # GET /links.xml
@@ -44,7 +45,6 @@ class LinksController < ApplicationController
   # POST /links
   # POST /links.xml
   def create
-    params[:link][:url] = 'http://' + params[:link][:url] unless params[:link][:url].starts_with?('http://') || params[:link][:url].starts_with?('https://')
     
     @link = current_user.links.create(params[:link])
     respond_to do |format|
@@ -91,6 +91,10 @@ class LinksController < ApplicationController
   def link_owner
     @Link = Link.find(params[:id])
     redirect_to root_path unless @Link.user == current_user
+  end
+
+  def prepend_url_protocol
+    params[:link][:url] = 'http://' + params[:link][:url] unless params[:link][:url].starts_with?('http://') || params[:link][:url].starts_with?('https://')
   end
 
 end
