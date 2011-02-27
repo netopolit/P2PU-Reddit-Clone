@@ -1,10 +1,10 @@
 <% if voted_up?(link) %>
   <div class="arrow upvoted"></div>
-  <h2 class="score"> <%= link.score %> </h2>
-  <div class="arrow downvote"></div>
+  <h2 class="score green"> <%= link.score %> </h2>
+  <div class="noarrow"></div>
 <% else %>
-  <div class="arrow upvote"></div>
-  <h2 class="score"> <%= link.score %> </h2>
+  <div class="noarrow"></div>
+  <h2 class="score red"> <%= link.score %> </h2>
   <div class="arrow downvoted"></div>
 <% end %>
 

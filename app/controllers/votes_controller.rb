@@ -9,15 +9,17 @@ class VotesController < ApplicationController
       current_user.votes.create(:link_id => @link.id, :points => @points)
       change_link_score(@link, @points)
       if @points == 1
+        @score_color = 'green'
         @selector1 = 'first'
         @element1 = '<div class="arrow upvoted"></div>'
         @selector2 = 'last'
-        @element2 = '<div class="arrow downvote"></div>'
+        @element2 = '<div class="noarrow"></div>'
       else
+        @score_color = 'red'
         @selector1 = 'last'
         @element1 = '<div class="arrow downvoted"></div>'
         @selector2 = 'first'
-        @element2 = '<div class="arrow upvote"></div>'
+        @element2 = '<div class="noarrow"></div>'
       end
     end
 

@@ -140,7 +140,7 @@ a#logo, a#logo:visited, a#logo:hover {
   text-decoration: none;
 }
 a#logo:hover {
-  color: #a81929;
+  color: #49a790;
 }
 #user_nav {
   display: block;
@@ -286,6 +286,12 @@ h2.score {
   padding:2px 0;
   color: #c6c6c6;
 }
+.score.green {
+  color: #49a790;
+}
+.score.red {
+  color: #aa0f2a;
+}
 
 .arrow input {
   cursor: pointer;
@@ -298,6 +304,16 @@ h2.score {
   border: 0;
   text-indent: -1000em;
   background: transparent url(../images/sprite.png) no-repeat center center;
+  margin: 0 auto;
+  padding: 0;
+}
+.noarrow {
+  display: block;
+  width:100%;
+  width: 15px;
+  height:14px;
+  border: 0;
+  text-indent: -1000em;
   margin: 0 auto;
   padding: 0;
 }
