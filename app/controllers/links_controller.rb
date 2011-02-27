@@ -44,8 +44,9 @@ class LinksController < ApplicationController
   # POST /links
   # POST /links.xml
   def create
+    params[:link][:url] = 'http://' + params[:link][:url] unless params[:link][:url].starts_with?('http://') || params[:link][:url].starts_with?('https://')
+    
     @link = current_user.links.create(params[:link])
-
     respond_to do |format|
       if @link.save
         format.html { redirect_to(@link, :notice => 'Link was successfully created.') }
