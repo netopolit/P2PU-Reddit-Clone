@@ -2,8 +2,7 @@
   %div= f.hidden_field :link_id
   %div= f.hidden_field :points
   .arrow.upvote= f.submit "Upvote"
-%h2.score
-  = link.score
+%h2.score= link.score
 = form_for( link.votes.build(:link_id => link.id, :points => -1), :remote => true ) do |f|
   %div= f.hidden_field :link_id
   %div= f.hidden_field :points
