@@ -7,6 +7,8 @@ gem 'rails', '3.0.4'
 
 gem 'sqlite3'
 gem 'devise'
+gem 'haml'
+gem 'haml-rails'
 
 gem 'jquery-rails', '>= 0.2.6'
 
@@ -31,4 +33,6 @@ gem 'jquery-rails', '>= 0.2.6'
 # and rake tasks are available in development mode:
 group :development, :test do
   gem 'annotate-models'
+  gem 'ruby_parser'
+  gem 'hpricot'
 end
