@@ -1,0 +1,10 @@
+- if voted_up?(link)
+  .arrow.upvoted
+  %h2.score.green
+    = link.score
+  .noarrow
+- else
+  .noarrow
+  %h2.score.red
+    = link.score
+  .arrow.downvoted

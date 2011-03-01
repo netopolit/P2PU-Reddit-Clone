@@ -1,0 +1,21 @@
+- @links.each do |link|
+  = div_for link do
+    %h2.link_title= link_to link.title, link.url
+    %p.submitted_by
+      submitted by: #{link.user.username}
+    %p.link_description= link.description
+    .votebar
+      .link-preview
+        :javascript
+          wsr_snapshot('#{link.url}', '4fR76fcd0dg8', 't');
+      .votes
+        - if !current_user || (current_user && !voted?(link))
+          = render :partial => 'vote_buttons', :locals => { :link => link }
+        - else
+          = render :partial => 'voted_buttons', :locals => { :link => link }
+    - if link.description.empty?
+      %br/
+    %br/
+- if user_signed_in?
+  %br/
+  = link_to content_tag(:span, 'New Link'), new_link_path, :class => "btn"

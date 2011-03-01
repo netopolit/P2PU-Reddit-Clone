@@ -1,0 +1,10 @@
+%h2= link_to @link.title, @link.url
+%p
+  submitted by: #{@link.user.username}
+%p
+  %b Description:
+  = @link.description
+- if owner?(@link.user)
+  = link_to 'Edit', edit_link_path(@link)
+  |
+= link_to 'Back', links_path

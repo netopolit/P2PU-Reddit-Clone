@@ -1,0 +1,5 @@
+/ conditional notice and alert: to supress flash put an empty string for that flash in devise.en.yml
+- if notice && !notice.to_s.empty?
+  %p.notice= notice
+- if alert && !alert.to_s.empty?
+  %p.alert= alert
