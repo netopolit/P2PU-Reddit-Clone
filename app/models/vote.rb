@@ -22,5 +22,6 @@ class Vote < ActiveRecord::Base
   #Should ensure max one vote by specific user per article?
   validates_uniqueness_of :link_id, :scope => :user_id
 
+  attr_accessible :title, :url, :description
 
 end

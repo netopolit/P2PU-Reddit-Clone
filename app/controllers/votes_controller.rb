@@ -8,19 +8,7 @@ class VotesController < ApplicationController
       @points = params[:vote][:points].to_i
       current_user.votes.create(:link_id => @link.id, :points => @points)
       change_link_score(@link, @points)
-      if @points == 1
-        @score_color = 'green'
-        @selector1 = 'first'
-        @element1 = '<div class="arrow upvoted"></div>'
-        @selector2 = 'last'
-        @element2 = '<div class="noarrow"></div>'
-      else
-        @score_color = 'red'
-        @selector1 = 'last'
-        @element1 = '<div class="arrow downvoted"></div>'
-        @selector2 = 'first'
-        @element2 = '<div class="noarrow"></div>'
-      end
+      set_js_variables(@points)
     end
 
     respond_to do |format|
@@ -38,10 +26,29 @@ class VotesController < ApplicationController
     end
   end
 
-  
+
+  private
+
   def change_link_score(link, points)
     score = link.score + points
-    link.update_attributes(:score => score)
+    link.score = score
+    link.save
+  end
+
+  def set_js_variables(points)
+    if @points == 1
+      @score_color = 'green'
+      @selector1 = 'first'
+      @element1 = '<div class="arrow upvoted"></div>'
+      @selector2 = 'last'
+      @element2 = '<div class="noarrow"></div>'
+    else
+      @score_color = 'red'
+      @selector1 = 'last'
+      @element1 = '<div class="arrow downvoted"></div>'
+      @selector2 = 'first'
+      @element2 = '<div class="noarrow"></div>'
+    end
   end
 
 end

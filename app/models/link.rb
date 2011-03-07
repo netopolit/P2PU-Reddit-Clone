@@ -16,7 +16,7 @@
 class Link < ActiveRecord::Base
   belongs_to :user
   has_many :votes, :dependent => :destroy
-  
+
   validates :user_id, :presence => true
   validates :title, :presence => true
   validates :url, :presence => true
@@ -26,9 +26,7 @@ class Link < ActiveRecord::Base
 
   default_scope order('score DESC, created_at DESC')
 
-  attr_accessible :title, :url, :description, :score
-
-
+  attr_accessible :title, :url, :description
 
 
 end
